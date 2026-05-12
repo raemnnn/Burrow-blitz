@@ -1,31 +1,54 @@
-const holes = document.querySelectorAll('.hole');
-const scoreDisplay = document.getElementById('score');
+/* ================================= */
+/* BURROW BLITZ MAIN GAME FILE */
+/* ================================= */
 
-let score = 0;
-let currentHole = null;
 
-// random hole appears
-function showMole() {
-    if (currentHole) {
-        currentHole.classList.remove('active');
-    }
+/* ================================= */
+/* MEMBER 2 - ENEMY & PHASE DATA */
+/* ================================= */
 
-    const index = Math.floor(Math.random() * holes.length);
-    currentHole = holes[index];
-    currentHole.classList.add('active');
-}
+/*
+Charles:
+- Enemy objects
+- Phase objects
+- Power-up timers
+*/
 
-// click logic
-holes.forEach(hole => {
-    hole.addEventListener('click', () => {
-        if (hole === currentHole) {
-            score++;
-            scoreDisplay.textContent = score;
-            hole.classList.remove('active');
-            currentHole = null;
-        }
-    });
-});
 
-// loop mole appearance
-setInterval(showMole, 800);
+
+/* ================================= */
+/* MEMBER 1 - GAME LOGIC */
+/* ================================= */
+
+/*
+Raymomd:
+- Spawn system
+- Hit detection
+- Lives system
+- Combo system
+- Game states
+- Timer system
+*/
+
+
+
+/* ================================= */
+/* MEMBER 5 - INTEGRATION */
+/* ================================= */
+
+/*
+Ylaiza:
+- Connect HTML + JS
+- Retry button
+- Score tracking
+- Browser testing
+- Merge support
+*/
+
+
+
+/* ================================= */
+/* INITIAL TEST */
+/* ================================= */
+
+console.log("Burrow Blitz Loaded Successfully");

@@ -1,37 +1,52 @@
+/* ================================= */
+/* GLOBAL RESET / BASE STYLES */
+/* ================================= */
+
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f4f4f4;
 }
 
-h1 {
-    margin-top: 20px;
-}
 
-.game {
-    width: 400px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
+/* ================================= */
+/* MEMBER 3 - SCREEN STYLING */
+/* ================================= */
 
-.hole {
-    width: 100%;
-    height: 120px;
-    background: #654321;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
-}
+/*
+Jerick:
+- Start Screen Styling
+- Game Screen Styling
+- Game Over Styling
+- HUD
+- Layout
+- Colors
+- Fonts
+*/
 
-/* mole */
-.hole.active::after {
-    content: "🐹";
-    font-size: 40px;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+
+
+/* ================================= */
+/* MEMBER 4 - ANIMATIONS & EFFECTS */
+/* ================================= */
+
+/*
+Korn:
+- Pop up animation
+- Retract animation
+- Ice slide animation
+- Gravity wobble
+- Screen shake
+- Particle effects
+*/
+
+
+
+/* ================================= */
+/* PLACEHOLDER CLASSES */
+/* ================================= */
+
+.hidden {
+    display: none;
 }
