@@ -25,7 +25,14 @@ Jerick:
 - Fonts
 */
 
+/* ================================= */
+/* SCREEN VISIBILITY */
+/* ================================= */
 
+#gameScreen,
+#gameOverScreen {
+    display: none;
+}
 
 /* ================================= */
 /* MEMBER 4 - ANIMATIONS & EFFECTS */

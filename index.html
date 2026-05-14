@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Burrow Blitz</title>
 
     <!-- MAIN CSS FILE -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -16,109 +16,150 @@
     <!-- MEMBER 3 - SCREENS & LAYOUT AREA -->
     <!-- ================================= -->
 
+    <!-- ================================= -->
     <!-- START SCREEN -->
+    <!-- ================================= -->
 
-    <div class="main-menu-container">
-        <div class="title">
-            <h1>BURROW BLITZ</h1>
+    <div id="startScreen" class="screen">
+
+        <div class="main-menu-container">
+            <div class="title">
+                <h1>BURROW BLITZ</h1>
+            </div>
+
+            <div class="buttons">
+
+                <div class="start">
+                    <button id="startBtn">▶ Start Game</button>
+                </div>
+
+                <div class="options">
+                    <button>⚙ Options</button>
+                </div>
+
+                <div class="howtoplay">
+                    <button>❓ How to Play</button>
+                </div>
+
+                <div class="exit">
+                    <button>✖ Exit</button>
+                </div>
+
+            </div>
         </div>
 
-        <div class="buttons">
-            <div class="start">
-                <button onclick="location.href='game.html'">▶ Start Game</button>
-            </div>
-            <div class="options">
-                <button onclick="location.href='options.html'">⚙ Options</button>
-            </div>
-            <div class="howtoplay">
-                <button onclick="location.href='howtoplay.html'">❓ How to Play</button>
-            </div>
-            <div class="exit">
-                <button onclick="location.href='exit.html'">✖ Exit</button>
-            </div>
-        </div>
     </div>
 
+
+
+    <!-- ================================= -->
     <!-- GAME SCREEN -->
-    <!-- Jerick builds the main gameplay screen here -->
+    <!-- ================================= -->
 
-    <div class="score-combo">
-        <div class="score">
-            <h1>Score: 0</h1>
+    <div id="gameScreen" class="screen">
+
+        <div class="score-combo">
+
+            <div class="score">
+                <h1 id="scoreText">Score: 0</h1>
+            </div>
+
+            <div class="combo">
+                <h1 id="comboText">Combo: 0</h1>
+            </div>
+
         </div>
 
-        <div class="combo">
-            <h1>Combo: 0</h1>
-        </div>
-    </div>
-    
-    <div class="game">
-        <div class="game-container">
-            <div class="grid">
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+        <div class="game">
+            <div class="game-container">
+
+                <div class="grid">
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
-                </div>
-                <div class="hole">
-                    <div class="mole">
-                        <h1>🐹</h1>
+
+                    <div class="hole">
+                        <div class="mole">
+                            <h1>🐹</h1>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
 
+
+
+    <!-- ================================= -->
     <!-- GAME OVER SCREEN -->
+    <!-- ================================= -->
 
-    <div class="game-over-container">
-        <div class="text">
-            <h1>GAME OVER</h1>
+    <div id="gameOverScreen" class="screen">
+
+        <div class="game-over-container">
+
+            <div class="text">
+                <h1>GAME OVER</h1>
+            </div>
+
+            <div class="message">
+                <p>You have lost the game.</p>
+            </div>
+
+            <div class="buttons">
+                <button id="retryBtn">Try Again</button>
+            </div>
+
         </div>
-        <div class="message">
-            <p>You have lost the game.</p>
-        </div>
-        <div class="buttons">
-            <button onclick="location.href='start.html'">Try Again</button>
-        </div>
+
     </div>
-
-    <!-- Jerick builds the game over screen here -->
 
 
 
@@ -132,6 +173,7 @@
 
     <!-- MAIN JAVASCRIPT FILE -->
     <script src="game.js"></script>
+
 </body>
 
 </html>

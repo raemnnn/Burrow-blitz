@@ -3,6 +3,40 @@
 /* ================================= */
 
 
+/* ================================= */
+/* SCREEN SWITCHING */
+/* ================================= */
+
+const startScreen = document.getElementById("startScreen");
+const gameScreen = document.getElementById("gameScreen");
+const gameOverScreen = document.getElementById("gameOverScreen");
+
+const startBtn = document.getElementById("startBtn");
+const retryBtn = document.getElementById("retryBtn");
+
+/* START GAME */
+
+startBtn.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    gameScreen.style.display = "block";
+});
+
+/* RETRY GAME */
+
+retryBtn.addEventListener("click", () => {
+    gameOverScreen.style.display = "none";
+    gameScreen.style.display = "block";
+});
+
+/* TEST GAME OVER */
+
+setTimeout(() => {
+    gameScreen.style.display = "none";
+    gameOverScreen.style.display = "block";
+}, 10000);
+
+console.log("Burrow Blitz Loaded Successfully");
+
 /* ========================================= */
 /* MEMBER 2 - ENEMY & PHASE DATA             */
 /* ========================================= */
