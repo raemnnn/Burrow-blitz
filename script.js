@@ -3,10 +3,30 @@
 /* ================================= */
 
 
+
+
 /* ================================= */
 /* SCREEN SWITCHING */
 /* ================================= */
 
+const startScreen = document.getElementById("startScreen");
+const gameScreen = document.getElementById("gameScreen");
+const gameOverScreen = document.getElementById("gameOverScreen");
+
+const startBtn = document.getElementById("startBtn");
+const retryBtn = document.getElementById("retryBtn");
+
+// START GAME
+startBtn.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    gameScreen.style.display = "block";
+});
+
+// RESTART GAME
+retryBtn.addEventListener("click", () => {
+    gameOverScreen.style.display = "none";
+    gameScreen.style.display = "block";
+});
 
 /* ========================================= */
 /* MEMBER 2 - ENEMY & PHASE DATA             */
@@ -57,16 +77,7 @@ Raymomd:
 /* STORYLINE CONTROL (OPTIONAL) */
 /* ================================= */
 
-// Future feature: story intro / cutscene system
-// Example: show story before game starts
 
-const story = {
-    intro: "Dr. Vermin Vox unleashed the Burrow Blitz...",
-    mission: "Stop the endless mole invasion.",
-    twist: "The system never stops evolving."
-};
-
-console.log("Story Loaded:", story);
 
 /* ================================= */
 /* MEMBER 5 - INTEGRATION */

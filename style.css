@@ -7,8 +7,70 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    background-color: rgba(20, 109, 0, 0.773);
 }
 
+/* ================================= */
+/* SCREEN SWITCHING */
+/* ================================= */
+
+.screen {
+    width: 100%;
+    height: 100vh;
+}
+
+#startScreen {
+    display: block;
+}
+
+#gameScreen,
+#gameOverScreen {
+    display: none;
+}
+
+/* ================================= */
+/* StoryLine */
+/* ================================= */
+
+/* ================================= */
+/* Mole*/
+/* ================================= */
+.mole h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+/* ================================= */
+/* HOLE*/
+/* ================================= */
+
+.hole {
+    width: 100px;
+    height: 100px;
+
+    background: #624502;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+
+    width: fit-content;
+}
 
 /* ================================= */
 /* MEMBER 3 - SCREEN STYLING */
