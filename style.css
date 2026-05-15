@@ -26,6 +26,20 @@ Jerick:
 */
 
 /* ================================= */
+/* STORYLINE / LORE SECTION */
+/* ================================= */
+
+.story-lore {
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    max-width: 500px;
+    margin: 10px auto;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* ================================= */
 /* SCREEN VISIBILITY */
 /* ================================= */
 
