@@ -1,56 +1,84 @@
+<!-- ================================= -->
+<!-- INDEX.HTML -->
+<!-- ================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burrow Blitz</title>
 
-    <!-- MAIN CSS FILE -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- ================================= -->
-    <!-- MEMBER 3 - SCREENS & LAYOUT AREA -->
-    <!-- ================================= -->
-
-    
-    <!-- ================================= -->
     <!-- START SCREEN -->
     <!-- ================================= -->
 
-    <section class="menu">
-        <div id="startScreen" class="screen">
+    <section id="startScreen" class="screen menu-screen">
 
-            <div class="main-menu-container">
-                <div class="title">
-                    <h1>BURROW BLITZ</h1>
-                </div>
+        <div class="main-menu-container">
 
-                <div class="buttons">
+            <h1 class="game-title">BURROW BLITZ</h1>
 
-                    <div class="start">
-                        <button id="startBtn" class=" button button-primary" onclick="startGame()">▶ Start Game</button>
-                    </div>
+            <div class="buttons">
 
-                    <div class="options">
-                        <button id="optionsBtn" class="button button-secondary" onclick="showOptions()">⚙ Options</button>
-                    </div>
+                <button id="startBtn" class="button">
+                    ▶ Start Game
+                </button>
 
-                    <div class="howtoplay">
-                        <button id="howToPlayBtn" class="button button-tertiary" onclick="showHowToPlay()">❓ How to Play</button>
-                    </div>
+                <button class="button">
+                    ⚙ Options
+                </button>
 
-                    <div class="exit">
-                        <button id="exitBtn" class="button button-quaternary" onclick="exitGame()">✖ Exit</button>
-                    </div>
+                <button class="button">
+                    ❓ How To Play
+                </button>
 
-                </div>
+                <button class="button">
+                    ✖ Exit
+                </button>
+
             </div>
 
-    </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- STORY SCREEN -->
+    <!-- ================================= -->
+
+    <section id="storyScreen" class="screen story-screen">
+
+        <div class="story-container">
+
+            <!-- ADD STORY IMAGE HERE -->
+            <!--
+            <img src="images/story.png" class="story-image">
+            -->
+
+            <h1>THE BURROW IS IN DANGER</h1>
+
+            <p>
+                Strange enemies have invaded the underground tunnels.
+                Protect the burrow and survive every phase before the
+                entire underground world collapses.
+            </p>
+
+            <button id="nextStoryBtn" class="button">
+                NEXT
+            </button>
+
+        </div>
+
+    </section>
 
 
 
@@ -58,172 +86,112 @@
     <!-- GAME SCREEN -->
     <!-- ================================= -->
 
-    <section class="burrow-blitz-game-screen">
+    <section id="gameScreen" class="screen game-screen phase-meadow">
 
-        <div id="gameScreen" class="screen">
+        <!-- PHASE TITLE -->
+        <div class="phase-title">
+            <h1 id="phaseText">PHASE 1 - MEADOW</h1>
+        </div>
 
-            <div class="score-combo-timer">
+        <!-- SCOREBOARD -->
+        <div class="scoreboard">
 
-                <div class="score">
-                    <h1 id="scoreText">Score:</h1>
-                    <p>0</p>
-                </div>
-
-                <div class="combo">
-                    <h1 id="comboText">Combo:</h1>
-                    <p>0</p>
-                </div>
-
-                <div class="timer">
-                    <h1 id="timerText">Time:</h1>
-                    <p>00:00</p>
-                </div>
-
+            <div class="score-box">
+                <h2>Score</h2>
+                <p id="scoreValue">0</p>
             </div>
 
-            <div class="game">
-                
-                <div class="game-container">
+            <div class="score-box">
+                <h2>Combo</h2>
+                <p id="comboValue">0</p>
+            </div>
 
-                    <div class="grid">
+            <div class="score-box">
+                <h2>Time</h2>
+                <p id="timerValue">00:00</p>
+            </div>
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
+        </div>
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
+        <!-- GAME GRID -->
+        <div class="grid">
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
 
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                        <div class="hole">
-                            <div class="mole">
-                                <h1>🐹</h1>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
+            </div>
+            <div class="hole">
+                <div class="mole">🐹</div>
             </div>
 
         </div>
 
     </section>
+
+
 
     <!-- ================================= -->
     <!-- GAME OVER SCREEN -->
     <!-- ================================= -->
 
-    <section class="game-over">
+    <section id="gameOverScreen" class="screen game-over-screen">
 
-        <div id="gameOverScreen" class="screen">
+        <div class="game-over-container">
 
-            <div class="game-over-container">
+            <h1>GAME OVER</h1>
 
-                <div class="text">
-                    <h1>GAME OVER</h1>
-                </div>
+            <p>You failed to protect the burrow.</p>
 
-                <div class="message">
-                    <p>You have lost the game.</p>
-                </div>
-
-                <div class="buttons">
-                    <button id="retryBtn" class="button button-primary" onclick="retryGame()">Try Again</button>
-                </div>
-
-            </div>
+            <button id="retryBtn" class="button">
+                TRY AGAIN
+            </button>
 
         </div>
 
     </section>
 
-    <!-- ================================= -->
-    <!-- MEMBER 4 - PARTICLES / EFFECTS -->
-    <!-- ================================= -->
-
-    <!-- Korn can add particle containers or effect elements here -->
-
-
-
-    <!-- MAIN JAVASCRIPT FILE -->
     <script src="script.js"></script>
 
 </body>
