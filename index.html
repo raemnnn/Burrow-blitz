@@ -32,19 +32,19 @@
                 <div class="buttons">
 
                     <div class="start">
-                        <button id="startBtn" class="button-primary" onclick="startGame()">▶ Start Game</button>
+                        <button id="startBtn" class=" button button-primary" onclick="startGame()">▶ Start Game</button>
                     </div>
 
                     <div class="options">
-                        <button id="optionsBtn" class="button-secondary" onclick="showOptions()">⚙ Options</button>
+                        <button id="optionsBtn" class="button button-secondary" onclick="showOptions()">⚙ Options</button>
                     </div>
 
                     <div class="howtoplay">
-                        <button id="howToPlayBtn" class="button-tertiary" onclick="showHowToPlay()">❓ How to Play</button>
+                        <button id="howToPlayBtn" class="button button-tertiary" onclick="showHowToPlay()">❓ How to Play</button>
                     </div>
 
                     <div class="exit">
-                        <button id="exitBtn" class="button-quaternary" onclick="exitGame()">✖ Exit</button>
+                        <button id="exitBtn" class="button button-quaternary" onclick="exitGame()">✖ Exit</button>
                     </div>
 
                 </div>
@@ -62,14 +62,21 @@
 
         <div id="gameScreen" class="screen">
 
-            <div class="score-combo">
+            <div class="score-combo-timer">
 
                 <div class="score">
-                    <h1 id="scoreText">Score: 0</h1>
+                    <h1 id="scoreText">Score:</h1>
+                    <p>0</p>
                 </div>
 
                 <div class="combo">
-                    <h1 id="comboText">Combo: 0</h1>
+                    <h1 id="comboText">Combo:</h1>
+                    <p>0</p>
+                </div>
+
+                <div class="timer">
+                    <h1 id="timerText">Time:</h1>
+                    <p>00:00</p>
                 </div>
 
             </div>
@@ -79,6 +86,36 @@
                 <div class="game-container">
 
                     <div class="grid">
+
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
+                        </div>
+
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
+                        </div>
+
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
+                        </div>
+
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
+                        </div>
+
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
+                        </div>
 
                         <div class="hole">
                             <div class="mole">
@@ -154,27 +191,29 @@
     <!-- GAME OVER SCREEN -->
     <!-- ================================= -->
 
-    <div id="gameOverScreen" class="screen">
+    <section class="game-over">
 
-        <div class="game-over-container">
+        <div id="gameOverScreen" class="screen">
 
-            <div class="text">
-                <h1>GAME OVER</h1>
-            </div>
+            <div class="game-over-container">
 
-            <div class="message">
-                <p>You have lost the game.</p>
-            </div>
+                <div class="text">
+                    <h1>GAME OVER</h1>
+                </div>
 
-            <div class="buttons">
-                <button id="retryBtn" onclick="retryGame()">Try Again</button>
+                <div class="message">
+                    <p>You have lost the game.</p>
+                </div>
+
+                <div class="buttons">
+                    <button id="retryBtn" class="button button-primary" onclick="retryGame()">Try Again</button>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-
+    </section>
 
     <!-- ================================= -->
     <!-- MEMBER 4 - PARTICLES / EFFECTS -->

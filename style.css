@@ -14,6 +14,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+p {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 
 /* ================================= */
 /* MEMBER 3 - SCREEN STYLING */
@@ -33,9 +38,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    gap: 20px;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .title {
@@ -45,20 +51,25 @@ body {
 }
 
 .buttons {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 10px;
-    margin-top: 20px;
-    border: none;
+}
+
+.button {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
     padding: 10px 20px;
+    background-color: #756f48;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    width: 200px;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 300px;
 }
 
 .button-primary {
@@ -77,6 +88,7 @@ body {
 
 .button-secondary {
     padding: 10px 20px;
+    background-color: #756f48;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -90,7 +102,7 @@ body {
 
 .button-tertiary {
     padding: 10px 20px;
-
+    background-color: #756f48;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -104,6 +116,7 @@ body {
 
 .button-quaternary {
     padding: 10px 20px;
+    background-color: #756f48;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -114,6 +127,96 @@ body {
 .button-quaternary:hover {
     background-color: #333;
 }
+
+.burrow-blitz-game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9b7653;
+    color: #000;
+}
+
+.score-combo-timer {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.score {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.combo {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.timer {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.hole {
+    width: 120px;
+    height: 120px;
+    background-color: #654321;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mole {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 120px);
+    grid-template-rows: repeat(5, 120px);
+    gap: 1px;
+    width: 360px;
+    height: 360px;
+}
+
+.game-over-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9b7653;
+    color: #000;
+}
+
+.text {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+
 
 /* ================================= */
 /* SCREEN VISIBILITY */
