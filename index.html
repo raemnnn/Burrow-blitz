@@ -20,122 +20,133 @@
     <!-- START SCREEN -->
     <!-- ================================= -->
 
-    <div id="startScreen" class="screen">
+    <section class="menu">
+        <div id="startScreen" class="screen">
 
-        <div class="main-menu-container">
-            <div class="title">
-                <h1>BURROW BLITZ</h1>
+            <div class="main-menu-container">
+                <div class="title">
+                    <h1>BURROW BLITZ</h1>
+                </div>
+
+                <div class="buttons">
+
+                    <div class="start">
+                        <button id="startBtn" class="button-primary" onclick="startGame()">▶ Start Game</button>
+                    </div>
+
+                    <div class="options">
+                        <button id="optionsBtn" class="button-secondary" onclick="showOptions()">⚙ Options</button>
+                    </div>
+
+                    <div class="howtoplay">
+                        <button id="howToPlayBtn" class="button-tertiary" onclick="showHowToPlay()">❓ How to Play</button>
+                    </div>
+
+                    <div class="exit">
+                        <button id="exitBtn" class="button-quaternary" onclick="exitGame()">✖ Exit</button>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="buttons">
-
-                <div class="start">
-                    <button id="startBtn">▶ Start Game</button>
-                </div>
-
-                <div class="options">
-                    <button>⚙ Options</button>
-                </div>
-
-                <div class="howtoplay">
-                    <button>❓ How to Play</button>
-                </div>
-
-                <div class="exit">
-                    <button>✖ Exit</button>
-                </div>
-
-            </div>
         </div>
-
-    </div>
-
-
+    </section>
 
     <!-- ================================= -->
     <!-- GAME SCREEN -->
     <!-- ================================= -->
 
-    <div id="gameScreen" class="screen">
+    <section class="burrow-blitz-game-screen">
 
-        <div class="score-combo">
+        <div id="gameScreen" class="screen">
 
-            <div class="score">
-                <h1 id="scoreText">Score: 0</h1>
+            <div class="score-combo">
+
+                <div class="score">
+                    <h1 id="scoreText">Score: 0</h1>
+                </div>
+
+                <div class="combo">
+                    <h1 id="comboText">Combo: 0</h1>
+                </div>
+
             </div>
 
-            <div class="combo">
-                <h1 id="comboText">Combo: 0</h1>
-            </div>
+            <div class="game">
+                
+                <div class="game-container">
 
-        </div>
+                    <div class="grid">
 
-        <div class="game">
-            <div class="game-container">
-
-                <div class="grid">
-
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="hole">
-                        <div class="mole">
-                            <h1>🐹</h1>
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
                         </div>
+
+                        <div class="hole">
+                            <div class="mole">
+                                <h1>🐹</h1>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
+
             </div>
+
         </div>
 
-    </div>
-
-
+    </section>
 
     <!-- ================================= -->
     <!-- GAME OVER SCREEN -->
@@ -154,7 +165,7 @@
             </div>
 
             <div class="buttons">
-                <button id="retryBtn">Try Again</button>
+                <button id="retryBtn" onclick="retryGame()">Try Again</button>
             </div>
 
         </div>

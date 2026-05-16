@@ -1,6 +1,11 @@
 /* ================================= */
 /* GLOBAL RESET / BASE STYLES */
 /* ================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -14,16 +19,101 @@ body {
 /* MEMBER 3 - SCREEN STYLING */
 /* ================================= */
 
-/*
-Jerick:
-- Start Screen Styling
-- Game Screen Styling
-- Game Over Styling
-- HUD
-- Layout
-- Colors
-- Fonts
-*/
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9b7653;
+    color: #000;
+}
+
+.main-menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.button-primary {
+    padding: 10px 20px;
+    background-color: #756f48;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #333;
+}
+
+.button-secondary {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: #333;
+}
+
+.button-tertiary {
+    padding: 10px 20px;
+
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-tertiary:hover {
+    background-color: #333;
+}
+
+.button-quaternary {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-quaternary:hover {
+    background-color: #333;
+}
 
 /* ================================= */
 /* SCREEN VISIBILITY */
