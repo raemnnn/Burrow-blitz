@@ -1,97 +1,105 @@
-/* ================================= */
-/* SCRIPT.JS */
-/* ================================= */
-
-/* ================================= */
-/* SCREENS */
-/* ================================= */
-
 const startScreen = document.getElementById("startScreen");
-
 const storyScreen = document.getElementById("storyScreen");
-
 const gameScreen = document.getElementById("gameScreen");
-
 const gameOverScreen = document.getElementById("gameOverScreen");
 
-/* ================================= */
-/* BUTTONS */
-/* ================================= */
-
 const startBtn = document.getElementById("startBtn");
-
 const nextStoryBtn = document.getElementById("nextStoryBtn");
-
 const retryBtn = document.getElementById("retryBtn");
 
-/* ================================= */
-/* START BUTTON */
-/* ================================= */
+const moles = document.querySelectorAll(".mole");
 
-startBtn.addEventListener("click", () => {
+const scoreValue = document.getElementById("scoreValue");
+const comboValue = document.getElementById("comboValue");
+const timerBar = document.getElementById("timerBar");
 
+let score = 0;
+let combo = 0;
+let time = 100;
+
+/* SCREEN FLOW */
+startBtn.onclick = () => {
     startScreen.style.display = "none";
-
     storyScreen.style.display = "flex";
+};
 
-});
-
-/* ================================= */
-/* STORY NEXT BUTTON */
-/* ================================= */
-
-nextStoryBtn.addEventListener("click", () => {
-
+nextStoryBtn.onclick = () => {
     storyScreen.style.display = "none";
-
     gameScreen.style.display = "flex";
+    startGame();
+};
 
-});
-
-/* ================================= */
-/* RETRY BUTTON */
-/* ================================= */
-
-retryBtn.addEventListener("click", () => {
-
+retryBtn.onclick = () => {
     gameOverScreen.style.display = "none";
-
     gameScreen.style.display = "flex";
+    resetGame();
+};
 
+/* MOLE CLICK */
+moles.forEach(mole => {
+    mole.addEventListener("click", () => {
+        if (mole.classList.contains("active")) {
+            mole.classList.remove("active");
+            mole.classList.add("matched");
+
+            score += 10;
+            combo++;
+
+            scoreValue.textContent = score;
+            comboValue.textContent = combo;
+
+            setTimeout(() => {
+                mole.classList.remove("matched");
+            }, 400);
+        }
+    });
 });
 
-/* ================================= */
-/* SAMPLE PHASE SWITCH */
-/* ================================= */
+/* SPAWN MOLES */
+function randomMole() {
+    moles.forEach(m => m.classList.remove("active"));
 
-const phaseText = document.getElementById("phaseText");
+    const index = Math.floor(Math.random() * moles.length);
+    moles[index].classList.add("active", "shuffling");
 
-/* SAMPLE ONLY */
+    setTimeout(() => {
+        moles[index].classList.remove("shuffling");
+    }, 500);
+}
 
-setTimeout(() => {
+/* GAME LOOP */
+function startGame() {
+    setInterval(randomMole, 800);
 
-    gameScreen.classList.remove("phase-meadow");
+    let timer = setInterval(() => {
+        time--;
 
-    gameScreen.classList.add("phase-desert");
+        timerBar.style.width = time + "%";
 
-    phaseText.textContent = "PHASE 2 - DESERT";
+        if (time < 30) {
+            timerBar.classList.add("warning");
+        }
 
-}, 10000);
+        if (time <= 0) {
+            clearInterval(timer);
+            gameOver();
+        }
+    }, 500);
+}
 
-/* ================================= */
-/* SAMPLE GAME OVER */
-/* ================================= */
-
-/*
-REMOVE THIS LATER
-*/
-
-setTimeout(() => {
-
+/* GAME OVER */
+function gameOver() {
     gameScreen.style.display = "none";
-
     gameOverScreen.style.display = "flex";
+}
 
-}, 30000);
+/* RESET */
+function resetGame() {
+    score = 0;
+    combo = 0;
+    time = 100;
 
-console.log("Burrow Blitz Loaded Successfully");
+    scoreValue.textContent = 0;
+    comboValue.textContent = 0;
+    timerBar.style.width = "100%";
+}

@@ -1,7 +1,3 @@
-<!-- ================================= -->
-<!-- INDEX.HTML -->
-<!-- ================================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Burrow Blitz</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,52 +13,27 @@
     <!-- ================================= -->
     <!-- START SCREEN -->
     <!-- ================================= -->
-
     <section id="startScreen" class="screen menu-screen">
 
         <div class="main-menu-container">
-
             <h1 class="game-title">BURROW BLITZ</h1>
 
             <div class="buttons">
-
-                <button id="startBtn" class="button">
-                    ▶ Start Game
-                </button>
-
-                <button class="button">
-                    ⚙ Options
-                </button>
-
-                <button class="button">
-                    ❓ How To Play
-                </button>
-
-                <button class="button">
-                    ✖ Exit
-                </button>
-
+                <button id="startBtn" class="button">▶ Start Game</button>
+                <button class="button">⚙ Options</button>
+                <button class="button">❓ How To Play</button>
+                <button class="button">✖ Exit</button>
             </div>
-
         </div>
 
     </section>
 
-
-
     <!-- ================================= -->
     <!-- STORY SCREEN -->
     <!-- ================================= -->
-
     <section id="storyScreen" class="screen story-screen">
 
         <div class="story-container">
-
-            <!-- ADD STORY IMAGE HERE -->
-            <!--
-            <img src="images/story.png" class="story-image">
-            -->
-
             <h1>THE BURROW IS IN DANGER</h1>
 
             <p>
@@ -72,23 +42,16 @@
                 entire underground world collapses.
             </p>
 
-            <button id="nextStoryBtn" class="button">
-                NEXT
-            </button>
-
+            <button id="nextStoryBtn" class="button">NEXT</button>
         </div>
 
     </section>
 
-
-
     <!-- ================================= -->
     <!-- GAME SCREEN -->
     <!-- ================================= -->
-
     <section id="gameScreen" class="screen game-screen phase-meadow">
 
-        <!-- PHASE TITLE -->
         <div class="phase-title">
             <h1 id="phaseText">PHASE 1 - MEADOW</h1>
         </div>
@@ -108,16 +71,21 @@
 
             <div class="score-box">
                 <h2>Time</h2>
+
                 <p id="timerValue">00:00</p>
+
+                <!-- TIMER BAR (ADDED FOR ANIMATION SYSTEM) -->
+                <div class="timer-bar-wrap">
+                    <div class="timer-bar" id="timerBar"></div>
+                </div>
+
             </div>
 
         </div>
 
-
-
-        <!-- GAME GRID -->
+        <!-- GRID -->
         <div class="grid">
-
+            <!-- 15 holes -->
             <div class="hole">
                 <div class="mole">🐹</div>
             </div>
@@ -165,29 +133,20 @@
             <div class="hole">
                 <div class="mole">🐹</div>
             </div>
-
         </div>
 
     </section>
 
-
-
     <!-- ================================= -->
-    <!-- GAME OVER SCREEN -->
+    <!-- GAME OVER -->
     <!-- ================================= -->
-
     <section id="gameOverScreen" class="screen game-over-screen">
 
         <div class="game-over-container">
-
             <h1>GAME OVER</h1>
-
             <p>You failed to protect the burrow.</p>
 
-            <button id="retryBtn" class="button">
-                TRY AGAIN
-            </button>
-
+            <button id="retryBtn" class="button">TRY AGAIN</button>
         </div>
 
     </section>
