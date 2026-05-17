@@ -224,8 +224,24 @@ body {
     align-items: center;
     background: black;
     color: white;
+    text-align: center;
+}
+
+.game-over-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 20px;
 }
 
 .game-over-container h1 {
     font-size: 70px;
+}
+
+.game-over-container p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.score-values {
+    margin-bottom: 30px;
 }
