@@ -87,7 +87,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: url("phase1.png");
     background-size: cover;
 }
 
@@ -95,6 +94,27 @@ body {
 .phase-title {
     color: white;
     margin-bottom: 10px;
+}
+
+.phase-meadow {
+    background-image: url("phase1.png");
+    background-size: cover;
+    display: none;
+}
+
+.phase-desert {
+    background-image: url("phase2.png");
+    background-size: cover;
+}
+
+.phase-snow {
+    background-image: url("phase3.png");
+    background-size: cover;
+}
+
+.phase-space {
+    background-image: url("phase4.png");
+    background-size: cover;
 }
 
 /* SCOREBOARD */
@@ -119,7 +139,7 @@ body {
     gap: 15px;
 }
 
-.hole {
+.hole-meadow {
     width: 120px;
     height: 120px;
     background: #4d2f18;
@@ -128,6 +148,18 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.hole-desert {
+    width: 120px;
+    height: 120px;
+    background: #8b4513;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 .mole {
     width: 90px;
