@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Burrow Blitz Intro lol</title>
+<style>
+  body { background: black; color: red; font-family: "Courier New", monospace; text-align: center; margin: 0; overflow: hidden; }
+  #box { margin-top: 15vh; }
+  #warn { font-size: 80px; animation: blink 0.6s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  #bigtxt { font-size: 50px; }
+  #smalltxt { font-size: 13px; color: darkred; letter-spacing: 4px; }
+  #logarea { text-align: left; width: 600px; margin: 0 auto; font-size: 11px; color: darkred; line-height: 1.8; }
+  #critbox { border: 3px solid red; width: 580px; margin: 0 auto; padding: 20px; animation: flashborder 0.3s step-end infinite; }
+  @keyframes flashborder { 50% { border-color: darkred; } }
+  #title { font-size: 100px; color: goldenrod; font-family: "Courier New"; animation: jitter 0.3s infinite; }
+  @keyframes jitter { 33% { transform: translate(1px,-1px); } 66% { transform: translate(-2px,1px); } }
+  #presskey { font-size: 26px; color: #6a5800; animation: blink 1s step-end infinite; cursor: pointer; margin-top: 20px; }
+  #sub1 { color: #4a4000; letter-spacing: 6px; font-size: 14px; }
+  #sub2 { color: #2a2800; letter-spacing: 5px; font-size: 11px; }
+  #skipbtn { position: fixed; bottom: 20px; right: 20px; font-size: 9px; color: #222; font-family: monospace; }
+  /* scanlines effect i found on stackoverflow */
+  body::after { content: ""; position: fixed; inset: 0; background: repeating-linear-gradient(transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px); pointer-events: none; z-index: 999; }
+</style>
+</head>
+<body>
+
+<div id="box"></div>
+<div id="skipbtn">SPACE / CLICK TO SKIP</div>
+
+<script>
+  var stage = 0;
+  var timers = [];
+  function wait(f, ms) { var t = setTimeout(f, ms); timers.push(t); }
+  function clearAll() { for (var i = 0; i < timers.length; i++) clearTimeout(timers[i]); timers = []; }
+
+  document.addEventListener("keydown", function(e) { if (e.code == "Space" || e.key == "Enter") skip(); });
+  document.addEventListener("click", skip);
+  function skip() { if (stage >= 4) goMenu(); else { clearAll(); stage4(); } }
+
+  function goMenu() {
+    document.body.style.transition = "opacity 0.6s";
+    document.body.style.opacity = "0";
+    setTimeout(function() { window.location.href = "index.html"; }, 600);
+  }
+
+  function stage1() {
+    stage = 1;
+    document.getElementById("box").innerHTML =
+      '<div id="warn">!</div>' +
+      '<div id="bigtxt">WARNING</div>' +
+      '<div id="smalltxt">CRITICAL SYSTEM ALERT DETECTED</div>';
+    wait(stage2, 2200);
+  }
+
+  var logs = [
+    ["00:00:01","SYS","","CLONE-O-MATIC boot sequence initiated..."],
+    ["00:00:01","SYS","","Loading DNA synthesizer module... OK"],
+    ["00:00:02","SYS","","Calibrating replication chamber... OK"],
+    ["00:00:02","INFO","","Subject loaded: TALPA EUROPAEA (common mole)"],
+    ["00:00:03","INFO","","Replication factor set to: 1x ... OK"],
+    ["00:00:04","WARN","#cc4400","Lever displacement detected on panel C-7"],
+    ["00:00:04","WARN","#cc4400","Safety interlock bypassed — replication UNLOCKED"],
+    ["00:00:05","ERR","#cc0000","ERROR: Replication loop not terminated"],
+    ["00:00:05","ERR","#cc0000","Clone count: 4 ... 8 ... 16 ... 32 ..."],
+    ["00:00:06","ERR","#cc0000","Chamber pressure CRITICAL — moles escaping"],
+    ["00:00:06","WARN","#cc4400","Burrow detection: 5 holes opened in lab floor"],
+    ["00:00:07","ERR","#cc0000","Clone count: 64 ... 128 ... overflow imminent"],
+    ["00:00:07","ERR","#cc0000","Containment wall breach — sector 3, 5, 7"],
+    ["00:00:08","CRIT","#ff2200","CRITICAL: INFESTATION THRESHOLD EXCEEDED"],
+    ["00:00:08","CRIT","#ff2200","ALL PERSONNEL: EVACUATE LAB IMMEDIATELY"],
+    ["00:00:09","CRIT","#ff2200","INITIATING EMERGENCY PROTOCOL WHACK-0001..."],
+  ];
+
+  function stage2() {
+    stage = 2;
+    document.getElementById("box").innerHTML =
+      '<div style="font-size:10px;color:#660000;letter-spacing:3px;border-bottom:1px solid #330000;padding-bottom:5px;margin-bottom:8px;width:600px;margin:0 auto 8px;display:flex;justify-content:space-between">' +
+        '<span>CLONE-O-MATIC v2.3 // SYSTEM LOG</span><span id="ts">00:00:00</span></div>' +
+      '<div id="logarea"></div>';
+
+    var i = 0;
+    function nextLine() {
+      if (i >= logs.length) { wait(stage3, 600); return; }
+      var row = logs[i];
+      var p = document.createElement("div");
+      p.style.color = row[2] || "#880000";
+      p.innerHTML = "<span style='color:#330000'>[" + row[0] + "]</span> " +
+        "<span style='border:1px solid currentColor;padding:0 3px;font-size:9px'>" + row[1] + "</span> " + row[3];
+      document.getElementById("logarea").appendChild(p);
+      document.getElementById("ts").textContent = row[0];
+      i++;
+      wait(nextLine, row[1] == "CRIT" ? 320 : row[1] == "ERR" ? 200 : 120);
+    }
+    wait(nextLine, 300);
+  }
+
+  function stage3() {
+    stage = 3;
+    document.getElementById("box").innerHTML =
+      '<div style="background:red;padding:8px;animation:flashborder 0.25s step-end infinite;font-size:18px;color:black;letter-spacing:5px">!! CONTAINMENT FAILURE !!</div>' +
+      '<div id="critbox">' +
+        '<div style="font-size:10px;color:#660000;letter-spacing:3px">ERR_CODE: 0xD34D-M0LE // LAB_SECTOR_7 // CLONING_CHAMBER_OVERFLOW</div>' +
+        '<div style="font-size:50px;color:#ff2200;animation:blink 0.3s step-end infinite">INFESTATION DETECTED</div>' +
+        '<div style="font-size:11px;color:#884400;letter-spacing:3px;line-height:2">' +
+          'MOLE COUNT: <span id="mc">1</span> AND RISING<br>' +
+          'CONTAINMENT INTEGRITY: <span id="ci">100</span>%<br>' +
+          'ESTIMATED TIME TO FULL INFESTATION: IMMINENT<br>' +
+          'RECOMMENDED ACTION: WHACK THEM. ALL OF THEM.' +
+        '</div>' +
+        '<div style="font-size:10px;color:#660000;letter-spacing:4px;margin-top:8px">INITIATING EMERGENCY PROTOCOL...</div>' +
+        '<div style="background:#1a0000;border:1px solid #440000;height:8px;margin-top:6px"><div id="bar" style="height:100%;width:0%;background:red;transition:width .12s"></div></div>' +
+      '</div>' +
+      '<div style="background:red;padding:8px;animation:flashborder 0.25s step-end infinite;font-size:18px;color:black;letter-spacing:5px">!! CONTAINMENT FAILURE !!</div>';
+
+    var moles=1, integrity=100, progress=0;
+    var tick = setInterval(function() {
+      moles = Math.min(9999, Math.floor(moles * 1.4 + Math.random() * 5));
+      integrity = Math.max(0, integrity - Math.floor(Math.random() * 12 + 4));
+      progress = Math.min(100, progress + 3.5);
+      document.getElementById("mc").textContent = moles.toLocaleString();
+      document.getElementById("ci").textContent = integrity;
+      document.getElementById("bar").style.width = progress + "%";
+      if (progress >= 100) { clearInterval(tick); wait(stage4, 400); }
+    }, 80);
+    timers.push(tick);
+  }
+
+  function stage4() {
+    stage = 4;
+    document.getElementById("skipbtn").style.display = "none";
+    document.getElementById("box").innerHTML =
+      '<div id="title">WHACK-EM-MOLE</div>' +
+      '<div id="sub1">BURROW BLITZ</div>' +
+      '<div id="sub2">UNDERGROUND EDITION</div>' +
+      '<div id="presskey" onclick="goMenu()">[&nbsp;PRESS ANY KEY&nbsp;]</div>';
+    document.addEventListener("keypress", function() { if (stage == 4) goMenu(); });
+  }
+
+  wait(stage1, 400);
+</script>
+</body>
+</html>
