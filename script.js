@@ -20,6 +20,7 @@ let gameState = "Start";
 let score = 0;
 let combo = 0;
 let time = 100;
+let lives = 3;
 let gameInterval;
 
 const PHASES = [
@@ -146,12 +147,22 @@ function randomMole() {
     mole.classList.add("active", "shuffling");
 
     setTimeout(() => {
-        if (mole.dataset.clicked !== "true") {
-            combo = 0;
-        }
 
-        mole.classList.remove("active");
-    }, 1000);
+    if (mole.dataset.clicked !== "true") {
+        combo = 0;
+        lives--;
+
+        console.log("Lives:", lives);
+
+        if (lives <= 0) {
+            gameOver();
+            return;
+        }
+    }
+
+    mole.classList.remove("active");
+
+}, 1000);
 }
 
 /* GAME LOOP */
@@ -159,6 +170,7 @@ function startGame() {
     gameState = "Playing";
 
     time = 100;
+    lives = 3;
     timerBar.style.width = "100%";
     timerValue.textContent = formatTime(time);
     timerBar.classList.remove("warning");
@@ -188,6 +200,7 @@ function resetGame() {
     score = 0;
     combo = 0;
     time = 100;
+    lives = 3;
 
     scoreValue.textContent = 0;
     comboValue.textContent = 0;
