@@ -65,6 +65,20 @@ body {
     -webkit-text-stroke: 8px #271905;
 }
 
+.how-to-play {
+    background-image: url("menubackground.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.how-to-play h3 {
+    font-family: Luckiest Guy, cursive;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+}
+
 .buttons {
     display: flex;
     flex-direction: column;
