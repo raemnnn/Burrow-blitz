@@ -25,37 +25,37 @@ const stories = [
     {
         image: "story1.png",
         title: "Scientist",
-        text: "My mole cloning machine is almost complete! With this, I can create an army of moles to take over the world!"
+        text: "After years of research, my cloning machine is finally complete. It was designed to revolutionize science and safely duplicate organic matter."
     },
 
     {
         image: "story2.png",
         title: "Scientist",
-        text: "Nobody can stop me now. Soon every city will belong to my mole empire!"
+        text: "Everything is ready. I will begin the first controlled test using a simple sample object."
     },
 
     {
         image: "story3.png",
         title: "Hero Mole",
-        text: "I have to stop the scientist before everything is destroyed!"
+        text: "A real mole unexpectedly enters the lab and gets inside the machine during the test sequence."
     },
 
     {
         image: "story4.png",
         title: "Scientist",
-        text: "Guards! Capture that mole immediately!"
+        text: "The system misreads the mole as the test sample and starts cloning it uncontrollably."
     },
 
     {
         image: "story5.png",
         title: "Hero Mole",
-        text: "I will fight through every obstacle to save the underground kingdom!"
+        text: "The machine overloads and releases countless cloned moles, spreading rapidly beyond control."
     },
 
     {
         image: "story6.png",
         title: "Narrator",
-        text: "The adventure begins..."
+        text: "The cloned mole swarm has escaped containment… and is now spreading across the world."
     }
 ];
 
