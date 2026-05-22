@@ -30,34 +30,35 @@ const stories = [
 
     {
         image: "story2.png",
-        title: "Scientist",
+        title: "Experiment Start",
         text: "Everything is ready. I will begin the first controlled test using a simple sample object."
     },
 
     {
         image: "story3.png",
-        title: "Hero Mole",
+        title: "Mistake",
         text: "A real mole unexpectedly enters the lab and gets inside the machine during the test sequence."
     },
 
     {
         image: "story4.png",
-        title: "Scientist",
+        title: "Malfunction",
         text: "The system misreads the mole as the test sample and starts cloning it uncontrollably."
     },
 
     {
         image: "story5.png",
-        title: "Hero Mole",
+        title: "Outbreak",
         text: "The machine overloads and releases countless cloned moles, spreading rapidly beyond control."
     },
 
     {
         image: "story6.png",
-        title: "Narrator",
+        title: "Global Crisis",
         text: "The cloned mole swarm has escaped containment… and is now spreading across the world."
     }
 ];
+
 
 let currentStory = 0;
 
