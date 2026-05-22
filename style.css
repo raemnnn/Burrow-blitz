@@ -18,7 +18,8 @@ body {
 #storyScreen,
 #gameScreen,
 #gameOverScreen,
-#howtoplay {
+#options-screen,
+#howtoplay-screen {
     display: none;
 }
 
@@ -63,6 +64,13 @@ body {
     margin-bottom: 40px;
     color: #5a3418;
     -webkit-text-stroke: 8px #271905;
+}
+
+.options-screen {
+    background-image: url("menubackground.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
 }
 
 .how-to-play {
